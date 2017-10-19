@@ -121,8 +121,12 @@ h1,h2,h3,h4,h5,h6,strong,span {
 .uk-header-slider {
   .top-slider-home-page {
     .slick-slide {
+      height: 600px;
       padding: 0; 
-      &:after {
+      img {
+        width: 100%;
+      }
+      &:before {
         content: "";
         position: absolute;
         background-color: rgba(0, 0, 0, 0.21);
@@ -892,7 +896,7 @@ span.onsale {
     line-height: 33px; 
     i {
       color: $main-color-text;
-      padding-right: 10px; 
+      padding-right: 10px;w
       font-size: 19px;   
     }
   }

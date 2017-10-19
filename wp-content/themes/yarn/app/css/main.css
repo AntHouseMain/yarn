@@ -82,8 +82,11 @@ h1, h2, h3, h4, h5, h6, strong, span {
 
 /* --== Front-Page==-- */
 .uk-header-slider .top-slider-home-page .slick-slide {
+  height: 600px;
   padding: 0; }
-  .uk-header-slider .top-slider-home-page .slick-slide:after {
+  .uk-header-slider .top-slider-home-page .slick-slide img {
+    width: 100%; }
+  .uk-header-slider .top-slider-home-page .slick-slide:before {
     content: "";
     position: absolute;
     background-color: rgba(0, 0, 0, 0.21);

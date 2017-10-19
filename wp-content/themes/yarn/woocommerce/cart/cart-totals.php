@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div class="cart_totals uk-text-center <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
-			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
+			<th><?php _e( 'Общая стоимость товаров в корзине', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 

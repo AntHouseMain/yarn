@@ -27,5 +27,7 @@ if ( ! $messages ) {
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-	<div class="woocommerce-message"><?php echo wp_kses_post( $message ); ?></div>
+	<hr class="uk-top-hr">
+	<div class="woocommerce-message uk-text-center"><?php echo wp_kses_post( $message ); ?></div>
+	<hr class="uk-bottom-hr">
 <?php endforeach; ?>
