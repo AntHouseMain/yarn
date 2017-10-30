@@ -32,29 +32,30 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 		?>
+		<div class="uk-container-expand">
+			<div class="uk-container-expand">
+				<div class="uk-margin-large-bottom" uk-grid> 
+					<div class="uk-width-1-1 uk-text-center">		
+						<header class="woocommerce-products-header">
+							<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-		<header class="woocommerce-products-header">
+								<h1 class="woocommerce-products-header__title page-title uk-heading-line uk-text-uppercase uk-text-bold-title">
+									<span><?php woocommerce_page_title(); ?></span>
+								</h1>
 
-			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+							<?php endif; ?>
 
-				<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+							<?php
+							do_action( 'woocommerce_archive_description' );
+							?>
 
-			<?php endif; ?>
-
-			<?php
-			/**
-			 * woocommerce_archive_description hook.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
-			?>
-
-		</header>
-
+						</header>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php get_top_cat (); ?> 
-		
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php

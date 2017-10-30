@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 ?>
-<div class="product_meta">
+<div class="product_meta uk-text-right@s uk-text-center uk-product-meta-link">
 
 	<?php do_action( 'woocommerce_product_meta_start' ); ?>
 

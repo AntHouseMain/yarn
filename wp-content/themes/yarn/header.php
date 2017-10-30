@@ -26,7 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'yarn' ); ?></a> -->
 
 	<header class="header-top">
-		<div class="uk-container uk-flex uk-flex-row uk-flex-middle uk-flex-wrap uk-flex-between uk-height-1-1">
+		<div class="uk-container uk-flex uk-flex-row uk-flex-middle uk-flex-wrap uk-flex-around@m uk-flex-between uk-height-1-1">
 			<div class="uk-logo">
 				<a href="<?php echo site_url()?>">
 					<img  src="<?php bloginfo('template_directory'); ?>/app/img/logo_header.png"  class="brand-logo" alt="" >
@@ -69,7 +69,7 @@
 				wp_nav_menu( array(
 					'theme_location' => 'cart-menu',
 					'menu_id'        => 'cart-menu-top',
-					'menu_class'     => 'uk-flex uk-flex-middle uk-margin-remove',
+					'menu_class'     => 'uk-flex uk-flex-middle uk-flex-center uk-margin-remove',
 				) );
 				?>
 			</div>

@@ -276,7 +276,7 @@ function get_top_cat () {
 	if ( $count > 0 ){
 		echo "<div class='uk-category-product uk-margin-large'>";
 		foreach ( $product_categories as $product_category ) {
-			echo '<div class="uk-text-center"><a href="' . get_term_link( $product_category ) . '">' . $product_category->name . '</div>';
+			echo '<div class="uk-text-center">'. $product_category->name . '</div>';
 		}
 		echo "</div>";
 	}

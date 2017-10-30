@@ -16,17 +16,10 @@
 <footer class="uk-footer uk-margin-large-top">
 	<div class="uk-container uk-container-small uk-margin-medium-bottom">
 		<div uk-grid>
-			<div class="uk-width-1-1 uk-width-1-4@m uk-text-center uk-text-left@s">
+			<div class="uk-width-1-1 uk-width-1-2@s uk-width-1-4@m uk-text-center uk-text-left@s uk-flex uk-flex-center uk-flex-middle uk-flex-column">
 				<img  src="<?php bloginfo('template_directory'); ?>/app/img/logo_header.png"  class="brand-logo" alt="" >
 			</div>
-			<div class="uk-width-1-1 uk-width-1-2@m uk-text-center uk-text-left@s">
-				<!-- <address class="uk-flex uk-flex-column">
-					<span><i class="fa fa-map-marker" aria-hidden="true"></i>г.Харьков ул. Механизаторская 9А</span>
-					<span><i class="fa fa-envelope" aria-hidden="true"></i>Karantekstil@gmail.com</span>
-					<span><i class="fa fa-phone" aria-hidden="true"></i>+ 38 (050) 741 91 75</span>
-					<span>+ 38 (050) 741 91 75</span>
-					<span>+ 38 (050) 741 91 75</span>
-				</address> -->
+			<div class="uk-width-1-1 uk-width-1-2@s uk-width-1-2@m uk-text-center uk-text-left@s">
 				<address class="uk-flex uk-flex-column">
 					<span class=""><i class="fa fa-envelope" aria-hidden="true"></i>Karantekstil@gmail.com</span>
 					<div class="uk-numberphone uk-flex uk-flex-column">

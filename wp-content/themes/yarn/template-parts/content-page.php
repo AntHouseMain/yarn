@@ -56,4 +56,4 @@
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
 
-<section class="uk-section uk-footer-image-a-us"></section>
+<section class="uk-section uk-footer-image-a-us uk-visible@s"></section>

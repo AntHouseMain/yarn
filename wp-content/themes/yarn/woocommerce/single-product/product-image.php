@@ -35,7 +35,7 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 ?>
 
 <div class="uk-width-1-1 uk-width-1-2@s uk-width-1-2@m <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<figure class="woocommerce-product-gallery__wrapper">
+	<figure class="woocommerce-product-gallery__wrapper uk-text-center">
 		<?php
 		$attributes = array(
 			'title'                   => get_post_field( 'post_title', $post_thumbnail_id ),

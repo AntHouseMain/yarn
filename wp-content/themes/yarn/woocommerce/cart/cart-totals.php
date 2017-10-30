@@ -25,9 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2>
+<!-- 	<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2> -->
 
-	<table cellspacing="0" class="shop_table shop_table_responsive">
+	<table cellspacing="0" class="shop_table shop_table_responsive uk-text-left uk-margin-auto">
 
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Общая стоимость товаров в корзине', 'woocommerce' ); ?></th>
@@ -89,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php _e( 'Total', 'woocommerce' ); ?></th>
+			<th><?php _e( 'Общая стоимость', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</table>
 
-	<div class="wc-proceed-to-checkout">
+	<div class="wc-proceed-to-checkout uk-margin-medium-top">
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div>
 

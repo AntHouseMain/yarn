@@ -24,10 +24,10 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+<form class="woocommerce-cart-form uk-text-center" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<table class="shop_table uk-width-1-1 shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+	<table class="shop_table uk-width-1-1 shop_table_responsive cart woocommerce-cart-form__contents uk-shop-table-cus" cellspacing="0">
 		<thead>
 			<tr>
 				<th class="product-thumbnail">&nbsp;</th>
@@ -114,7 +114,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<td class="product-remove">
 							<?php
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-								'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+								'<a href="%s" class="remove uk-custom-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 								__( 'Remove this item', 'woocommerce' ),
 								esc_attr( $product_id ),
@@ -130,8 +130,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<tr>
-				<td colspan="6" class="actions">
+			<tr class="uk-margin-medium-top">
+				<td colspan="6" class="actions uk-text-center uk-text-right@m">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="coupon">
@@ -140,7 +140,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 					<?php } ?>
 
-					<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" />
+					<input type="submit" class="button uk-add-to-cart" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" />
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -154,7 +154,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
-<div class="cart-collaterals">
+<div class="cart-collaterals uk-margin-medium-top">
 	<?php
 		/**
 		 * woocommerce_cart_collaterals hook.

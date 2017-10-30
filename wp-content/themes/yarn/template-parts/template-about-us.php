@@ -39,6 +39,6 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="uk-section uk-footer-image-a-us"></section>
+<section class="uk-section uk-footer-image-a-us uk-visible@s"></section>
 
 <?php get_footer(); ?>

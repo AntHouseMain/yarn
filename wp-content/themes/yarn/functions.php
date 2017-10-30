@@ -122,13 +122,14 @@ function yarn_scripts() {
 
 
 	wp_enqueue_style( 'roboto-font-style', 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic' );
-	wp_register_style( 'uikit-css', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css' );
+	wp_register_style('uikit-css', get_template_directory_uri() . '/app/css/uikit.min.css');
+	// wp_register_style( 'uikit-css', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css' );
 	wp_enqueue_style('uikit-css');
 	wp_register_style('width-ex-css', get_template_directory_uri() . '/app/css/width-ex.min.css');
 	wp_enqueue_style('width-ex-css');
 	wp_register_style('main-css', get_template_directory_uri() . '/app/css/main.css');
 	wp_enqueue_style('main-css');
-	wp_register_style('slick-css', 'http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css');
+	wp_register_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
 	wp_enqueue_style('slick-css');
 	wp_enqueue_style( 'yarn-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_script( 'html5shiv', 'https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js' );
@@ -137,12 +138,14 @@ function yarn_scripts() {
 	wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'yarn-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', true );
+	wp_register_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array ('jquery'), null, true);
+	wp_enqueue_script('slick-js');
 	// wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCn6dGfdktRWfG7YjL57ScwhLClvt93U-c&callback=initMa', true );
-	wp_register_script('uikit-js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js', array ('jquery'), null, true);
+	// wp_register_script('uikit-js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js', array ('jquery'), null, true);
+	wp_register_script('uikit-js', get_template_directory_uri() . '/app/js/uikit.min.js', array ('jquery'), null, true);
 	wp_enqueue_script('uikit-js');
 
-	wp_register_script('slick-js', 'http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array ('jquery'), null, true);
-	wp_enqueue_script('slick-js');
+
 	wp_register_script('main-js', get_template_directory_uri() . '/app/js/main.js', array ('jquery'), null, true);
 	wp_enqueue_script('main-js');
 
@@ -204,5 +207,19 @@ function the_truncated_post($symbol_amount) {
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 add_action ( 'woocommerce_before_shop_loop_item', 'my_function', 10 );
 function my_function() {
-  echo '<a href="' . get_the_permalink() . '"class="woocommerce-LoopProduct-link woocommerce-loop-product__link uk-position-relative">';
+	echo '<a href="' . get_the_permalink() . '"class="woocommerce-LoopProduct-link woocommerce-loop-product__link uk-position-relative">';
+}
+
+add_filter( 'woocommerce_checkout_fields' , 'new_woocommerce_checkout_fields', 10, 1 );
+
+function new_woocommerce_checkout_fields($fields){
+
+    $fields['billing']['billing_address_1']['type']="textarea"; //меняем тип поля с input на textarea
+    
+    $fields['billing']['billing_address_1']['label']="Адрес для доставки"; // переименовываем поле
+    
+    unset($fields['billing']['billing_address_2']); //удаляем Подъезд, этаж и т.п.
+    unset($fields['billing']['billing_city']); //удаляем Населённый пункт
+    
+    return $fields;
 }
