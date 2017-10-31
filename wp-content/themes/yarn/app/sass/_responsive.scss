@@ -1,9 +1,48 @@
-@media only screen and (max-width : 1200px) {
-
+$main-color-text: #212121;
+@media only screen and (max-width : 1199px) {
+	.uk-lg-block {
+		height: 541px;
+	}
 }
 
-@media only screen and (max-width : 979px) {
+@media only screen and (max-width : 959px) {
+	.uk-image-about-us,
+	.uk-image-contacts {
+		height: 170px;
+	}
+	#cart-menu-top {
+		padding: 0;
+		justify-content: center;
+		list-style: none;
+		padding-top: 14px;
+	}
+	#primary-menu-mobile {
+		a {
+			color: #FFF;
+			height: 60px;
+		}
+	}
+	.uk-search-header {
+		input {
+			border: 1px solid $main-color-text;
+			padding: 5px 10px; 
+			&:focus {
+				outline: 1px solid #00943a;
+				border: 1px solid #b4b4b4;
+			} 
+		}
+		button {
+			color: $main-color-text;
+			background-color: #FFF;
+			border: 0;
+			padding: 5px 10px;
+			cursor: pointer;
+			&:hover {
+				background-color: #008b2e;
 
+			}
+		}
+	}
 }
 
 @media only screen and (max-width : 767px) {
@@ -13,6 +52,19 @@
 	}
 }
 
+@media only screen and (max-width : 639px) {
+	.uk-popular-small-img,
+	.uk-lg-block,
+	.uk-image-wrap {
+		max-height: 350px;
+		height: 300px;
+	}
+	.uk-lg-block {
+		img {
+			width: 100%;
+		}
+	}
+}
 @media only screen and (max-width : 480px) {
 
 }

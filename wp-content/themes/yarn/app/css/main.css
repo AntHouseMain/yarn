@@ -1,4 +1,4 @@
-.header-top nav ul li a, .header-top .uk-search-header button, .header-top #cart-menu-top a, .top-slider-home-page .uk-information-slide a, .uk-section-about-us-front-page a, .uk-section-our-yarn .uk-catalog-front-page, .uk-section-questions .uk-cntact-form-question .wpcf7-submit, .uk-section-contacts .uk-form-contacts .wpcf7-submit, .woocommerce-loop-product__title, .uk-add-to-cart, #order_review .uk-buy-button input,
+.transition_3, .header-top nav ul li a, .header-top .uk-search-header button, .header-top #cart-menu-top a, .top-slider-home-page .uk-information-slide a, .uk-section-about-us-front-page a, .uk-section-our-yarn .uk-catalog-front-page, .uk-section-questions .uk-cntact-form-question .wpcf7-submit, .uk-section-contacts .uk-form-contacts .wpcf7-submit, .woocommerce-loop-product__title, .uk-add-to-cart, #order_review .uk-buy-button input,
 .woocommerce-order-details .uk-buy-button input, .error-404 ul li i, .uk-social-icons i {
   -webkit-transition: .4s ease-out;
   -moz-transition: .4s ease-out;
@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, h6, strong, span {
 
 .uk-heading-line > :after, .uk-heading-line > :before {
   border-bottom: 1px solid #bcbcbc;
+}
+
+.uk-slideshow-items {
+  background-color: #9b9b9b;
 }
 
 .header-top {
@@ -315,6 +319,10 @@ h1, h2, h3, h4, h5, h6, strong, span {
   opacity: 1;
 }
 
+.slick-prev:hover {
+  opacity: .5;
+}
+
 .slick-next {
   right: -25px;
 }
@@ -330,6 +338,10 @@ h1, h2, h3, h4, h5, h6, strong, span {
   right: -11px;
   top: 0;
   opacity: 1;
+}
+
+.slick-next:hover {
+  opacity: .5;
 }
 
 /* Dots */
@@ -408,6 +420,10 @@ h1, h2, h3, h4, h5, h6, strong, span {
 .uk-image-wrap {
   height: 250px;
   position: relative;
+  width: 100%;
+  background-image: url("../img/karan.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .uk-image-wrap img {
@@ -418,7 +434,7 @@ h1, h2, h3, h4, h5, h6, strong, span {
 }
 
 .uk-popular-small-img {
-  height: 260px;
+  max-height: 260px;
   height: 255px;
   position: relative;
 }
@@ -519,17 +535,33 @@ h1, h2, h3, h4, h5, h6, strong, span {
   font-size: 18px;
 }
 
-.uk-numberphone {
-  line-height: 30px;
+.uk-mail {
+  color: #333;
 }
 
-.uk-numberphone span:last-child,
-.uk-numberphone span:nth-child(2n) {
+.uk-mail:hover {
+  color: #333;
+}
+
+.uk-numberphone a {
+  line-height: 30px;
+  color: #333;
+}
+
+.uk-numberphone a:last-child, .uk-numberphone a:nth-child(2n) {
   margin-left: 24px;
+}
+
+.uk-numberphone a:last-child i, .uk-numberphone a:nth-child(2n) i {
+  display: none;
 }
 
 /* --== /Conacts ==-- */
 /* --== Woocommerce ==-- */
+.uk-products-image img {
+  border: 2px solid #e9e9e9;
+}
+
 .uk-image-archive-products {
   background: #333 url("../img/top-product.jpg") center center;
   height: 340px;
@@ -721,9 +753,7 @@ nav.woocommerce-breadcrumb {
 
 .uk-product-meta-link,
 .woocommerce-message {
-  color: red;
   margin-bottom: 20px;
-  background-color: #ebebeb;
   padding: 10px 0;
 }
 
@@ -1028,9 +1058,62 @@ span.onsale {
   transform: none;
 }
 
+@media only screen and (max-width: 1199px) {
+  .uk-lg-block {
+    height: 541px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .uk-image-about-us,
+  .uk-image-contacts {
+    height: 170px;
+  }
+  #cart-menu-top {
+    padding: 0;
+    justify-content: center;
+    list-style: none;
+    padding-top: 14px;
+  }
+  #primary-menu-mobile a {
+    color: #FFF;
+    height: 60px;
+  }
+  .uk-search-header input {
+    border: 1px solid #212121;
+    padding: 5px 10px;
+  }
+  .uk-search-header input:focus {
+    outline: 1px solid #00943a;
+    border: 1px solid #b4b4b4;
+  }
+  .uk-search-header button {
+    color: #212121;
+    background-color: #FFF;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .uk-search-header button:hover {
+    background-color: #008b2e;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .uk-footer {
     border-top: 1px solid rgba(51, 51, 51, 0.18);
     padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .uk-popular-small-img,
+  .uk-lg-block,
+  .uk-image-wrap {
+    max-height: 350px;
+    height: 300px;
+  }
+  .uk-lg-block img {
+    width: 100%;
   }
 }

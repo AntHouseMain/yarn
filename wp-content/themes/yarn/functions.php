@@ -7,6 +7,8 @@
  * @package yarn
  */
 
+
+
 if ( ! function_exists( 'yarn_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -83,7 +85,6 @@ if ( ! function_exists( 'yarn_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'yarn_setup' );
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -101,6 +102,7 @@ add_action( 'after_setup_theme', 'yarn_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
 function yarn_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'yarn' ),
@@ -207,19 +209,48 @@ function the_truncated_post($symbol_amount) {
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 add_action ( 'woocommerce_before_shop_loop_item', 'my_function', 10 );
 function my_function() {
-	echo '<a href="' . get_the_permalink() . '"class="woocommerce-LoopProduct-link woocommerce-loop-product__link uk-position-relative">';
+	echo '<a href="' . get_the_permalink() . '"class="woocommerce-LoopProduct-link woocommerce-loop-product__link uk-position-relative uk-products-image">';
 }
 
 add_filter( 'woocommerce_checkout_fields' , 'new_woocommerce_checkout_fields', 10, 1 );
 
 function new_woocommerce_checkout_fields($fields){
 
-    $fields['billing']['billing_address_1']['type']="textarea"; //меняем тип поля с input на textarea
-    
-    $fields['billing']['billing_address_1']['label']="Адрес для доставки"; // переименовываем поле
-    
-    unset($fields['billing']['billing_address_2']); //удаляем Подъезд, этаж и т.п.
-    unset($fields['billing']['billing_city']); //удаляем Населённый пункт
-    
-    return $fields;
+	$fields['billing']['billing_address_1']['type']="textarea"; 
+
+	$fields['billing']['billing_address_1']['label']="Адрес для доставки";
+
+	unset($fields['billing']['billing_address_2']);
+	unset($fields['billing']['billing_city']); 
+
+	return $fields;
+}
+// delete visual editor from some pages
+function onwp_disable_content_editor() {
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+	if( !isset( $post_id ) ) return;
+	$template_file = get_post_meta($post_id, '_wp_page_template', true);
+	if ( $template_file == 'template-parts/template-about-us.php' ) {
+		remove_post_type_support( 'page', 'editor' );
+	}
+	if ( $template_file == 'template-parts/template-contacts.php' ) {
+		remove_post_type_support( 'page', 'editor' );
+	}
+}
+
+add_action( 'admin_init', 'onwp_disable_content_editor' );
+
+// custom image products
+add_action( 'init', 'custom_fix_thumbnail' );
+
+function custom_fix_thumbnail() {
+	add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+
+	function custom_woocommerce_placeholder_img_src( $src ) {
+		$upload_dir = wp_upload_dir();
+		$uploads = untrailingslashit( $upload_dir['baseurl'] );
+		$src = $uploads . '/2017/10/karan.png';
+
+		return $src;
+	}
 }

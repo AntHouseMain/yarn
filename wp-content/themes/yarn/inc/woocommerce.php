@@ -260,7 +260,7 @@ if ( ! function_exists( 'yarn_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 10;' ), 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
 
 function get_top_cat () {
 	$args = array(

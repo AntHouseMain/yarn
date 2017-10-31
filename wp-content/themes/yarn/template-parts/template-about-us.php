@@ -13,14 +13,13 @@ get_header(); ?>
 		<div class="uk-margin-large-bottom" uk-grid> 
 			<div class="uk-width-1-1 uk-text-center">
 				<h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-					<span> о нас </span>
+					<span><?php _e(' о нас ', 'yarn'); ?></span>
 				</h2>				
 			</div>
 		</div>
 	</div>
 	<div class="uk-container uk-container-small uk-text-center">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dicta sed quibusdam dolorem fugit quaerat vero aliquam velit nesciunt iure omnis, corporis deserunt iusto suscipit natus eligendi cumque excepturi optio! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dicta sed quibusdam dolorem fugit quaerat vero aliquam velit nesciunt iure omnis, corporis deserunt iusto suscipit natus eligendi cumque excepturi optio!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dignissimos id a nisi optio quia quas quidem sequi magnam architecto eos odio iure mollitia, nulla laudantium, commodi quos alias, et.</p>
+		<?php the_field('about_us_description'); ?>
 	</div>
 </section>
 
@@ -29,13 +28,13 @@ get_header(); ?>
 		<div class="uk-margin-large-bottom" uk-grid> 
 			<div class="uk-width-1-1 uk-text-center">
 				<h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-					<span> почему мы </span>
-				</h2>				
+					<span><?php _e('  почему мы  ', 'yarn'); ?></span>
+				</h2>	
 			</div>
 		</div>
 	</div>
 	<div class="uk-container uk-container-small uk-text-center">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dicta sed quibusdam dolorem fugit quaerat vero aliquam velit nesciunt iure omnis, corporis deserunt iusto suscipit natus eligendi cumque excepturi optio! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dicta sed quibusdam dolorem fugit quaerat vero aliquam velit nesciunt iure omnis, corporis deserunt iusto suscipit natus eligendi cumque excepturi optio!</p>
+		<?php the_field('why_we_description'); ?>
 	</div>
 </section>
 
