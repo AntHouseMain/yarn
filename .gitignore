@@ -1,3 +1,4 @@
 
 wp-content/themes/yarn/node_modules
 wp-config.php
+.idea/*
