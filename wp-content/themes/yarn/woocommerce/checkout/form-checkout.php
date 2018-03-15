@@ -36,6 +36,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" uk-grid>
 
+
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
@@ -65,3 +66,50 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<script>
+    $(function(){
+        var err = 0 ;
+        var mess = '' ;
+        $(document).on("click","#place_order",function(e) {
+            var err = 0 ;
+            e.preventDefault();
+            vallength('billing_first_name');
+            vallength('billing_last_name');
+            vallength('billing__97481');
+            vallength('billing___30443');
+            ValidPhone('billing_phone');
+
+            if(err > 0){
+            }else{
+                var form = $('.woocommerce-checkout');
+                form.submit();
+            }
+
+        });
+
+        function vallength(id) {
+           var elem = $('#'+id);
+            if(elem.val().length < 2){
+                elem.addClass('error-length');
+                err++ ;
+            }else{
+                elem.removeClass('error-length');
+            }
+        }
+
+        function ValidPhone(id) {
+
+            var re=/^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,14}$/;
+            var phone = $('#'+id);
+            var myPhone = phone.val();
+            var valid = re.test(myPhone);
+            if (valid){
+                mess = 'Номер телефона введен правильно!';
+                phone.removeClass('error-length');
+                err++;
+            } else {
+                phone.addClass('error-length');
+                mess = 'Номер телефона введен неправильно!';}
+        }
+    });
+</script>

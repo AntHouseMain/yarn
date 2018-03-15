@@ -271,13 +271,30 @@ function get_top_cat () {
 		'hide_empty' => $hide_empty,
 		'include'    => $ids,
 	);
+
 	$product_categories = get_terms( 'product_cat', $args );
 	$count = count($product_categories);
 	if ( $count > 0 ){
-		echo "<div class='uk-category-product uk-margin-large'>";
+
+	//	echo "<div class='uk-category-product uk-margin-large'>";
+
+		echo '<div class="category-slide"><div class="uk-position-relative uk-visible-toggle uk-light " uk-slider >
+        <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">';
 		foreach ( $product_categories as $product_category ) {
-			echo '<div class="uk-text-center">'. $product_category->name . '</div>';
+			echo ' <li>
+            <div class="uk-panel">
+                <div class="uk-position-center uk-panel color-bl">
+                    <a href="/product-category/'.$product_category->slug.'">'. $product_category->name . '</a>
+                </div>    
+             </div>
+        </li>';
 		}
-		echo "</div>";
+		echo '</ul>
+
+    <a class="color-slidenav uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="color-slidenav uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div></div>';
+	//	echo "</div>";
 	}
 }

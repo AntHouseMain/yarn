@@ -597,10 +597,10 @@
                                 if ( $value = wpdesk_get_order_meta( $order, '_'.$field['name'] , true ) ) {
                                     if ( isset( $field['type'] ) ) {
                                     	$value = apply_filters( 'flexible_checkout_fields_print_value', $value, $field );
-                                        $return[] = '<b>'.stripslashes( wpdesk__( $field['label'], 'flexible-checkout-fields' ) ).'</b>: '.$value;
+                                        $return[] = '<b>'.stripslashes( wpdesk__( $field['placeholder'], 'flexible-checkout-fields' ) ).'</b>: '.$value;
                                     }
                                 	else{
-                                        $return[] = '<b>'.stripslashes( wpdesk__( $field['label'], 'flexible-checkout-fields' ) ).'</b>: '.$value;
+                                        $return[] = '<b>'.stripslashes( wpdesk__( $field['placeholder'], 'flexible-checkout-fields' ) ).'</b>: '.$value;
                                     }
                                 }
                             }
@@ -609,7 +609,7 @@
                 }
 
                 if( !empty( $return ) ) {
-                    echo '<div class="address_flexible_checkout_fields"><p class="form-field form-field-wide">' . implode( '<br />', $return ) . '</p></div>';
+                    echo '<div class="address_flexible_checkout_fields"><p class="form-field form-field-wide 343">' . implode( '<br />', $return ) . '</p></div>';
                 }
             }
         }

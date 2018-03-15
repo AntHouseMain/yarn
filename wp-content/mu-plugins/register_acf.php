@@ -160,6 +160,23 @@ class GRD_Functions {
 						
 					],
 					[
+						'key'        => 'all_contacts_f',
+						'label'      => __ ( 'Телефон footer', 'yarn' ),
+						'name'       => 'all_contacts_f',
+						'type'       => 'repeater',
+						'layout'     => 'Table',
+						'max'        => '0',
+						'sub_fields' => [
+                            [
+                                'key'   => 'phone_link_footer',
+                                'label' => __ ( 'Телефон', 'yarn' ),
+                                'name'  => 'phone_link_footer',
+                                'type'  => 'text',
+                            ],
+						],
+
+					],
+					[
 						'key'   => 'third_tab_contacts',
 						'label' => __( 'Адрес', 'yarn' ),
 						'name'  => 'contacts_tab_3',

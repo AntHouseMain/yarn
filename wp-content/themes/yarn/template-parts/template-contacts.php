@@ -33,8 +33,9 @@ get_header(); ?>
 							<?php endwhile; ?>
 						<?php endif; ?>
 					</div>
-
+                    <?php if(!empty(the_field('address_contacts'))): ?>
 					<span><i class="fa fa-map-marker" aria-hidden="true"></i><?php the_field('address_contacts'); ?></span>
+                    <?php endif; ?>
 				</address>
 
 				<div class="uk-social-icons">
@@ -58,12 +59,12 @@ get_header(); ?>
 
 </section>
 
-<section class="">
+<!-- <section class="">
 	<div class="uk-container-expand">
 		<div class="uk-margin-large-bottom" uk-grid> 
 			<div class="uk-width-1-1 uk-text-center">
 				<h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-					<span><?php _e(' как нас найти ', 'yarn'); ?></span>
+					<span><?php //_e(' как нас найти ', 'yarn'); ?></span>
 				</h2>				
 			</div>
 		</div>
@@ -71,6 +72,6 @@ get_header(); ?>
 	<div class="uk-container-extand">
 		<div id="map"></div>
 	</div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>

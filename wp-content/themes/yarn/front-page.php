@@ -257,12 +257,12 @@
 		</div>
 	</div>
 </section>
-<section class="uk-section-reviews">
+<!-- <section class="uk-section-reviews">
 	<div class="uk-container-expand">
 		<div class="uk-margin-large-bottom" uk-grid> 
 			<div class="uk-width-1-1 uk-text-center">
 				<h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-					<span><?php _e('  как нас найти  ', 'yarn'); ?></span>
+					<span><?php // _e('  как нас найти  ', 'yarn'); ?></span>
 				</h2>				
 			</div>
 		</div>
@@ -272,6 +272,6 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 </div>
 <?php get_footer(); ?>

@@ -254,3 +254,4 @@ function custom_fix_thumbnail() {
 		return $src;
 	}
 }
+

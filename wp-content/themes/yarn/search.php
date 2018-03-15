@@ -18,7 +18,7 @@ get_header(); ?>
 				if ( have_posts() ) : ?>
 				<div class="page-header">
 					<h1 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-						<span>Резулльтат поиска:</span>
+						<span>Результат поиска:</span>
 					</h1>
 					<strong class="uk-text-uppercase uk-h3"><?php echo get_search_query(); ?></strong>
 				</div><!-- .page-header -->
@@ -26,33 +26,37 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<?php
-	/* Start the Loop */
-	while ( have_posts() ) : the_post();
+    <div class="uk-container">
+    <div uk-grid>
+
+    <?php
+    /* Start the Loop */
+    while ( have_posts() ) : the_post(); ?>
+
+        <?php wc_get_template_part( 'content', 'product' );
+
+    endwhile;
+else :
+
+    get_template_part( 'template-parts/content', 'none' );
+
+endif; ?>
+
+    </div>
+        <?php
 
 				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
+				 * woocommerce_after_shop_loop hook.
+				 *
+				 * @hooked woocommerce_pagination - 10
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				do_action( 'woocommerce_after_shop_loop' );
 
-				endwhile; ?>
+?>
 
-				<div class="uk-navigation-search uk-text-center uk-margin-medium-top">
-					<?php 
-					wp_pagenavi();
-					?>
-				</div>
-				<?php
-			else :
 
-				get_template_part( 'template-parts/content', 'none' );
-
-				endif; ?>
-
-			</section><!-- #primary -->
-
+    </div>
+    			</section><!-- #primary -->
 			<?php
 	// get_sidebar();
 			get_footer();
