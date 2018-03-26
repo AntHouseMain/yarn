@@ -16,11 +16,13 @@
  * @version 3.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
 global $product;
-
 ?>
-<p class="price uk-flex uk-flex-column"><?php echo $product->get_price_html(); ?></p>
+    <p class="price uk-flex uk-flex-column"><?php echo $product->get_price_html(); ?></p>
+
+<?php $product_category_id = $product->category_ids[0];
+echo term_description($product_category_id); ?>
