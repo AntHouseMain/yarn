@@ -285,3 +285,10 @@ function custom_fix_thumbnail()
 }
 
 
+# deleting attribute type in scripts and styles
+add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
+function sj_remove_type_attr($tag)
+{
+    return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
+}

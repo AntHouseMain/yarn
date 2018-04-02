@@ -270,41 +270,41 @@
         </div>
     </div>
 </section>
-<section class="uk-section-reviews">
-    <div class="uk-container-expand">
-        <div class="uk-margin-large-bottom" uk-grid>
-            <div class="uk-width-1-1 uk-text-center">
-                <h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">
-                    <span><?php _e('  наши партнеры  ', 'yarn'); ?></span>
-                </h2>
-            </div>
-        </div>
-    </div>
-    <div class="uk-container">
-        <div uk-grid>
-            <div class="uk-width-1-1">
-                <div class="uk-position-relative uk-visible-toggle uk-light"
-                     uk-slider="autoplay: true; autoplay-interval: 4000">
-                    <?php if (have_rows('our_partners')): ?>
-                        <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-5@m uk-text-center uk-grid">
-                            <?php while (have_rows('our_partners')): the_row(); ?>
-                                <li>
-                                    <?php $our_partners_image = get_sub_field('our_partners_image');
-                                    if (!empty($our_partners_image)): ?>
-                                        <img src="<?php echo $our_partners_image['sizes']['logo_partner']; ?>"
-                                             alt="<?php echo $our_partners_image['alt']; ?>"/>
-                                    <?php endif; ?>
-                                    <h3 class="uk-h5 uk-color-black uk-margin-small-top"><?php the_sub_field('our_partners_name'); ?></h3>
-                                </li>
-                            <?php endwhile; ?>
-                        </ul>
-
-                    <?php endif; ?>
-                    <ul class="uk-slider-nav uk-dotnav uk-dotnav-custom uk-flex-center uk-margin uk-position-small"></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section class="uk-section-reviews">-->
+<!--    <div class="uk-container-expand">-->
+<!--        <div class="uk-margin-large-bottom" uk-grid>-->
+<!--            <div class="uk-width-1-1 uk-text-center">-->
+<!--                <h2 class="uk-heading-line uk-text-uppercase uk-text-bold-title">-->
+<!--                    <span>--><?php //_e('  наши партнеры  ', 'yarn'); ?><!--</span>-->
+<!--                </h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="uk-container">-->
+<!--        <div uk-grid>-->
+<!--            <div class="uk-width-1-1">-->
+<!--                <div class="uk-position-relative uk-visible-toggle uk-light"-->
+<!--                     uk-slider="autoplay: true; autoplay-interval: 4000">-->
+<!--                    --><?php //if (have_rows('our_partners')): ?>
+<!--                        <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-child-width-1-5@m uk-text-center uk-grid">-->
+<!--                            --><?php //while (have_rows('our_partners')): the_row(); ?>
+<!--                                <li>-->
+<!--                                    --><?php //$our_partners_image = get_sub_field('our_partners_image');
+//                                    if (!empty($our_partners_image)): ?>
+<!--                                        <img src="--><?php //echo $our_partners_image['sizes']['logo_partner']; ?><!--"-->
+<!--                                             alt="--><?php //echo $our_partners_image['alt']; ?><!--"/>-->
+<!--                                    --><?php //endif; ?>
+<!--                                    <h3 class="uk-h5 uk-color-black uk-margin-small-top">--><?php //the_sub_field('our_partners_name'); ?><!--</h3>-->
+<!--                                </li>-->
+<!--                            --><?php //endwhile; ?>
+<!--                        </ul>-->
+<!---->
+<!--                    --><?php //endif; ?>
+<!--                    <ul class="uk-slider-nav uk-dotnav uk-dotnav-custom uk-flex-center uk-margin uk-position-small"></ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 </div>
 <?php get_footer(); ?>
