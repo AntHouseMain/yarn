@@ -52,7 +52,8 @@ h1, h2, h3, h4, h5, h6, strong, span {
 }
 
 .header-top {
-  height: 100px;
+  height: 80px;
+  background-color: #fff;
 }
 
 .header-top nav ul {
@@ -62,10 +63,19 @@ h1, h2, h3, h4, h5, h6, strong, span {
 }
 
 .header-top nav ul li {
-  padding: 0 30px;
+  padding: 28px 0;
+}
+
+.header-top nav ul li:hover {
+  background-color: #f9f9f9;
+}
+
+.header-top nav ul li:hover > a {
+  color: #00943a;
 }
 
 .header-top nav ul li a {
+  padding: 28px 30px;
   color: #212121;
   font-weight: 700;
 }
@@ -75,7 +85,7 @@ h1, h2, h3, h4, h5, h6, strong, span {
   color: #00943a;
 }
 
-.header-top .menu-header-menu-container ul li.current-menu-item a {
+.header-top .current {
   color: #00943a;
 }
 
@@ -141,6 +151,104 @@ h1, h2, h3, h4, h5, h6, strong, span {
   color: #333;
 }
 
+/* --== MAIN MENU ==-- */
+#primary-menu .menu-item-has-children .sub-menu-0 {
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  left: 0;
+  top: -1000px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  transition: .4s;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  transition: 0.2s .5s;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-0 li {
+  min-width: 150px;
+  padding: 25px;
+  position: relative;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-0 li:hover {
+  background-color: inherit;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-0 li:hover > a {
+  color: inherit;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-0 li a {
+  padding: 0;
+  display: block;
+  border-bottom: 1.5px solid #b9b9b9;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-0 li a:hover {
+  border-bottom: 1.5px solid #00943a;
+}
+
+#primary-menu .menu-item-has-children:hover > .sub-menu-0 {
+  top: 100%;
+  z-index: 999;
+  transition-delay: 0s;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-1 li {
+  padding: 0;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-1 li a {
+  padding: 10px;
+  border-bottom: 0;
+  font-weight: 400;
+  position: relative;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-1 li a:hover {
+  border-bottom: 0;
+  text-decoration: underline;
+}
+
+#primary-menu .menu-item-has-children .sub-menu-1 li a:before {
+  content: '\26AC';
+  position: absolute;
+  left: -3px;
+}
+
+#primary-menu .li-image {
+  background-image: url("https://telegraf.com.ua/files/2017/03/054.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+/* --== /MAIN MENU ==-- */
 /* --== Front-Page==-- */
 .top-slider-home-page li:after {
   content: "";
@@ -675,13 +783,10 @@ ol.flex-control-nav.flex-control-thumbs li img:hover {
 
 .woocommerce-loop-product__title {
   position: absolute;
-  bottom: -20px;
-  background-color: white;
   padding: 10px;
   left: 0;
   right: 0;
   text-align: center;
-  width: 100px;
   margin: 0 auto;
   font-size: 16px;
   font-weight: 700;
@@ -699,6 +804,45 @@ ol.flex-control-nav.flex-control-thumbs li img:hover {
 
 .woocommerce-loop-product__link {
   display: block;
+}
+
+.uk-name-product a {
+  color: #212121;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.uk-name-product a:hover {
+  color: #00943a;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.woocommerce-NoticeGroup {
+  display: none;
+}
+
+.error-length {
+  border: 2px solid #c71717;
+}
+
+.color-bl a {
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+.color-bl a:hover {
+  text-decoration: none;
+  color: #00943a;
+}
+
+.category-slide div {
+  height: 60px;
+  padding-top: 15px;
+}
+
+.color-slidenav {
+  color: #0f0f0f !important;
 }
 
 ul.page-numbers {
@@ -1097,6 +1241,19 @@ span.onsale {
   }
 }
 
+@media only screen and (min-width: 960px) and (max-width: 1100px) {
+  .header-top {
+    height: auto;
+    padding-bottom: 8px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  #toggleMenu {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 959px) {
   .uk-image-about-us,
   .uk-image-contacts {
@@ -1104,7 +1261,6 @@ span.onsale {
   }
   #cart-menu-top {
     padding: 0;
-    justify-content: center;
     list-style: none;
     padding-top: 14px;
   }
@@ -1130,6 +1286,62 @@ span.onsale {
   .uk-search-header button:hover {
     background-color: #008b2e;
   }
+  /* --== MOBILE MENU ==-- */
+  #primary-menu-mobile .sub-menu-0 {
+    padding: 0;
+    list-style: none;
+  }
+  #primary-menu-mobile .sub-menu-0 #toggleMenu {
+    top: 15px !important;
+  }
+  #primary-menu-mobile li {
+    width: 100%;
+    padding: 10px 0;
+  }
+  #primary-menu-mobile li a {
+    padding: 0;
+    justify-content: start !important;
+  }
+  #primary-menu-mobile li > ul li a {
+    height: 35px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #primary-menu-mobile .menu-item-has-children {
+    position: relative;
+  }
+  #primary-menu-mobile .menu-item-has-children .sub-menu-0 {
+    display: none;
+  }
+  #primary-menu-mobile .menu-item-has-children .sub-menu-1 {
+    display: none;
+  }
+  #primary-menu-mobile .menu-item-has-children #toggleMenu {
+    position: absolute;
+    right: -8px;
+    top: 26px;
+    padding: 6px 10px;
+    border: 10px;
+    z-index: 150;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #1e7b00;
+  }
+  #primary-menu-mobile .menu-item-has-children #toggleMenu:focus {
+    background-color: #dadada;
+    outline-color: #1e7b00;
+    color: #000;
+  }
+  #primary-menu-mobile .menu-item-has-children:focus:after {
+    background-color: red;
+  }
+  /* --== /MOBILE MENU ==-- */
 }
 
 @media only screen and (max-width: 767px) {

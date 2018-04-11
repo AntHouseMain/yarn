@@ -1,6 +1,5 @@
 jQuery(document).ready(function () {
 
-
     jQuery('.uk-reviews-slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -39,22 +38,45 @@ jQuery(document).ready(function () {
     });
 
     $(function () {
-        $(window).scroll(function () {
-            var top = $(document).scrollTop();
-
-            if (top > 10) {
-                if (!($(".header-top").hasClass("main-navigation"))) {
-                    $(".header-top").addClass("main-navigation");
-                }
-            }
-            else {
-                $(".header-top").removeClass("main-navigation");
-
+        $('#primary-menu a').each(function () {
+            var location = window.location.href;
+            var link = this.href;
+            var result = location.match(link);
+            if (result != null) {
+                $(this).addClass('current');
             }
         });
     });
-
 });
+
+// Mobile menu
+//
+// $('li.menu-item-has-children').click(function () {
+//     console.log(this);
+//     var checkElement = $(this).children('ul');
+//     checkElement.stop().animate({'height': 'toggle'}, 500).parent().toggleClass('active');
+//     if (checkElement.is(checkElement)) {
+//         return false;
+//     }
+// });
+
+$(".menu-item-has-children > a").after("<button id='toggleMenu'><i class='fa fa-chevron-down'></i></button>");
+
+
+$(function () {
+    var el = $('.menu-item-has-children #toggleMenu');
+    // $('#primary-menu-mobile li:has("ul")').append('<span></span>');
+    el.click(function () {
+        var checkElement = $(this).next();
+
+        checkElement.stop().animate({'height': 'toggle'}, 500).parent().toggleClass('active');
+        if (checkElement.is('ul')) {
+            return false;
+        }
+    });
+});
+
+
 (function ($) {
 
 })(jQuery);

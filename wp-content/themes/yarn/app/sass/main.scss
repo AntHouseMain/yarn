@@ -55,34 +55,43 @@ h1, h2, h3, h4, h5, h6, strong, span {
 
 // h2.uk-heading-line {
 //  font-weight: 700;
-//  font-family: 'Roboto', sans-serif; 
+//  font-family: 'Roboto', sans-serif;
 // }
 .uk-slideshow-items {
   background-color: #9b9b9b;
 }
 
 .header-top {
-  height: 100px;
+  height: 80px;
+  background-color: #fff;
   nav {
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
       li {
-        padding: 0 30px;
+        padding: 28px 0;
+        &:hover {
+          background-color: #f9f9f9;
+        }
+        &:hover > a {
+          color: #00943a;
+        }
         a {
+          padding: 28px 30px;
           color: $main-color-text;
           font-weight: $text-bold;
           @extend .transition_3;
           &:hover {
             text-decoration: none;
             color: #00943a;
+
           }
         }
       }
     }
   }
-  .menu-header-menu-container ul li.current-menu-item a {
+  .current {
     color: #00943a;
   }
   .uk-navbar-toggle {
@@ -145,6 +154,152 @@ h1, h2, h3, h4, h5, h6, strong, span {
   }
 }
 
+/* --== MAIN MENU ==-- */
+
+#primary-menu {
+  .menu-item-has-children {
+    .sub-menu-0 {
+      position: absolute;
+      background-color: #f9f9f9;
+      width: 100%;
+      left: 0;
+      top: -1000px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      padding: 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: baseline;
+      -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline;
+      transition: .4s;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      transition: 0.2s .5s;
+
+      li {
+        min-width: 150px;
+        padding: 25px;
+        position: relative;
+        &:hover {
+          background-color: inherit;
+        }
+        &:hover > a {
+          color: inherit;
+        }
+        a {
+          padding: 0;
+          display: block;
+          border-bottom: 1.5px solid #b9b9b9;
+          &:hover {
+            border-bottom: 1.5px solid #00943a;
+          }
+        }
+      }
+    }
+    &:hover {
+      > .sub-menu-0 {
+        top: 100%;
+        z-index: 999;
+        transition-delay: 0s;
+      }
+    }
+
+    .sub-menu-1 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      li {
+        padding: 0;
+        a {
+          padding: 10px;
+          border-bottom: 0;
+          font-weight: 400;
+          position: relative;
+          &:hover {
+            border-bottom: 0;
+            text-decoration: underline;
+          }
+          &:before {
+            content: '\26AC';
+            position: absolute;
+            left: -3px;
+          }
+        }
+      }
+    }
+  }
+  .li-image {
+    background-image: url('https://telegraf.com.ua/files/2017/03/054.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+}
+
+//#primary-menu {
+//  li {
+//    text-align: center;
+//  }
+//  .menu-item-has-children {
+//    position: relative;
+//    .sub-menu-0 {
+//      top: -1000px;
+//      position: absolute;
+//      left: 0;
+//      right: auto;
+//      width: auto;
+//      max-width: 220px;
+//    }
+//    &:hover {
+//      > .sub-menu-0 {
+//        display: block;
+//        text-decoration: underline;
+//        top: 100%;
+//        background-color: red;
+//        z-index: 999;
+//        li {
+//          padding: 13px 0;
+//          a {
+//            padding: 15px 32px;
+//          }
+//        }
+//      }
+//    }
+//    .sub-menu-1 {
+//      left: 100%;
+//      position: absolute;
+//      background-color: green;
+//      top: 0;
+//      display: none;
+//    }
+//    &:after {
+//      content: '+';
+//      background-color: green;
+//      position: absolute;
+//      right: 10px;
+//      top: 50%;
+//      -webkit-transform: translate(0, -50%);
+//      -ms-transform: translate(0, -50%);
+//      transform: translate(0, -50%);
+//    }
+//  }
+//}
+
+/* --== /MAIN MENU ==-- */
+
 /* --== Front-Page==-- */
 
 .top-slider-home-page {
@@ -164,7 +319,7 @@ h1, h2, h3, h4, h5, h6, strong, span {
     // position: absolute;
     // left: 0;
     // right: 0;
-    // top: 30%;  
+    // top: 30%;
     z-index: 100;
     // margin: 0 auto;
     p {
@@ -706,13 +861,13 @@ ol.flex-control-nav.flex-control-thumbs {
 
 .woocommerce-loop-product__title {
   position: absolute;
-  bottom: -20px;
-  background-color: white;
+  //bottom: -20px;
+  //background-color: white;
   padding: 10px;
   left: 0;
   right: 0;
   text-align: center;
-  width: 100px;
+  //width: 100px;
   margin: 0 auto;
   font-size: 16px;
   font-weight: 700;
@@ -730,6 +885,45 @@ ol.flex-control-nav.flex-control-thumbs {
 
 .woocommerce-loop-product__link {
   display: block;
+}
+
+.uk-name-product a {
+  color: #212121;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.uk-name-product a:hover {
+  color: #00943a;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.woocommerce-NoticeGroup {
+  display: none;
+}
+
+.error-length {
+  border: 2px solid #c71717;
+}
+
+.color-bl a {
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+.color-bl a:hover {
+  text-decoration: none;
+  color: #00943a;
+}
+
+.category-slide div {
+  height: 60px;
+  padding-top: 15px;
+}
+
+.color-slidenav {
+  color: #0f0f0f !important;
 }
 
 ul.page-numbers {
