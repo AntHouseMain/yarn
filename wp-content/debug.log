@@ -1,0 +1,8 @@
+[19-Apr-2018 15:28:08 UTC] PHP Notice:  Undefined variable: number in /var/www/wp/wp-content/themes/yarn/front-page.php on line 47
+[19-Apr-2018 15:28:08 UTC] PHP Notice:  Undefined variable: orderby in /var/www/wp/wp-content/themes/yarn/front-page.php on line 48
+[19-Apr-2018 15:28:08 UTC] PHP Notice:  Undefined variable: hide_empty in /var/www/wp/wp-content/themes/yarn/front-page.php on line 50
+[19-Apr-2018 15:28:08 UTC] PHP Notice:  Undefined variable: ids in /var/www/wp/wp-content/themes/yarn/front-page.php on line 51
+[19-Apr-2018 15:28:11 UTC] PHP Notice:  Undefined variable: number in /var/www/wp/wp-content/themes/yarn/front-page.php on line 47
+[19-Apr-2018 15:28:11 UTC] PHP Notice:  Undefined variable: orderby in /var/www/wp/wp-content/themes/yarn/front-page.php on line 48
+[19-Apr-2018 15:28:11 UTC] PHP Notice:  Undefined variable: hide_empty in /var/www/wp/wp-content/themes/yarn/front-page.php on line 50
+[19-Apr-2018 15:28:11 UTC] PHP Notice:  Undefined variable: ids in /var/www/wp/wp-content/themes/yarn/front-page.php on line 51
